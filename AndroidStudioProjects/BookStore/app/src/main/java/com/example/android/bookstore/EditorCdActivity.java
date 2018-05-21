@@ -1,9 +1,11 @@
 package com.example.android.bookstore;
 
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -108,31 +110,57 @@ public class EditorCdActivity extends AppCompatActivity {
 
         String cd_name = cdName.getText().toString().trim();
         String cd_price = cdPrice.getText().toString().trim();
-        double cd_price_double = Double.parseDouble(cd_price);
-
-        DecimalFormat decimalFormat = new DecimalFormat("####0.00");
-        cd_price = decimalFormat.format(cd_price_double).toString();
-        double priceDoubleRounded = Double.parseDouble(cd_price);
-
         String cd_quantity = cdQuantity.getText().toString().trim();
-        int cd_quantity_int = Integer.parseInt(cd_quantity);
         String cd_artist = cdArtist.getText().toString().trim();
 
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(StoreContract.CDEntry.COLUMN_CD_NAME, cd_name);
-        contentValues.put(StoreContract.CDEntry.COLUMN_CD_PRICE, priceDoubleRounded);
-        contentValues.put(StoreContract.CDEntry.COLUMN_CD_QUANTITY, cd_quantity_int);
-        contentValues.put(StoreContract.CDEntry.COLUMN_CD_ARTIST, cd_artist);
-        contentValues.put(StoreContract.CDEntry.COLUMN_CD_GENRE, genreInt);
+        if (cd_name.isEmpty() || cd_price.isEmpty() || cd_quantity.isEmpty() || cd_artist.isEmpty()) {
+
+            if (!cd_name.isEmpty()) {
+
+                cdName.setTextKeepState(cd_name);
+
+                if (!cd_price.isEmpty()) {
+
+                    cdPrice.setTextKeepState(cd_price);
+
+                    if (!cd_quantity.isEmpty()) {
+
+                        cdQuantity.setTextKeepState(cd_quantity);
+
+                        if (!cd_artist.isEmpty()) {
+
+                            cdArtist.setTextKeepState(cd_artist);
+                        }
+                    }
+                }
+            }
+
+            onBackPressed();
+        } else {
+
+            double cd_price_double = Double.parseDouble(cd_price);
+            DecimalFormat decimalFormat = new DecimalFormat("####0.00");
+            cd_price = decimalFormat.format(cd_price_double).toString();
+            double priceDoubleRounded = Double.parseDouble(cd_price);
+            int cd_quantity_int = Integer.parseInt(cd_quantity);
+
+            contentValues.put(StoreContract.CDEntry.COLUMN_CD_NAME, cd_name);
+            contentValues.put(StoreContract.CDEntry.COLUMN_CD_PRICE, priceDoubleRounded);
+            contentValues.put(StoreContract.CDEntry.COLUMN_CD_QUANTITY, cd_quantity_int);
+            contentValues.put(StoreContract.CDEntry.COLUMN_CD_ARTIST, cd_artist);
+            contentValues.put(StoreContract.CDEntry.COLUMN_CD_GENRE, genreInt);
+            finish();
+        }
 
         long newRowId = sqLiteDatabase.insert(StoreContract.CDEntry.TABLE_NAME, null, contentValues);
         if (newRowId == -1) {
 
-            Toast.makeText(this, "Error saving CD", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.error_saving_cd), Toast.LENGTH_SHORT).show();
         } else {
 
-            Toast.makeText(this, "CD saved in row " + newRowId, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.cd_saved_in_row) + newRowId, Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -152,7 +180,6 @@ public class EditorCdActivity extends AppCompatActivity {
             case R.id.save:
 
                 insertCd();
-                finish();
                 return true;
 
             case R.id.delete:
@@ -168,6 +195,31 @@ public class EditorCdActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setMessage(getResources().getString(R.string.alert_cd));
+        builder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.cancel();
+            }
+        });
+        builder.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.cancel();
+                finish();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
 }
 
 

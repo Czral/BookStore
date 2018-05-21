@@ -1,9 +1,11 @@
 package com.example.android.bookstore;
 
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -44,6 +46,8 @@ public class EditorBookActivity extends AppCompatActivity {
     EditText supplierPhoneEditText;
 
     public int bookCoverInt = 0;
+
+    long newRowId = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,39 +94,78 @@ public class EditorBookActivity extends AppCompatActivity {
 
     private void insertBook() {
 
+        double priceDouble;
+        double priceDoubleRounded;
+        int quantityInt;
+        int supplierPhoneInt;
+
         BookDbHelper bookDbHelper = new BookDbHelper(this);
         SQLiteDatabase database = bookDbHelper.getWritableDatabase();
 
         String productName = productEditText.getText().toString().trim();
         String price = priceEditText.getText().toString().trim();
-        double priceDouble = Double.parseDouble(price);
-
-        DecimalFormat decimalFormat = new DecimalFormat("####0.00");
-        price = decimalFormat.format(priceDouble).toString();
-        double priceDoubleRounded = Double.parseDouble(price);
-
         String quantity = quantityEditText.getText().toString().trim();
-        int quantityInt = Integer.parseInt(quantity);
         String supplierName = supplierNameEditText.getText().toString().trim();
         String supplierPhone = supplierPhoneEditText.getText().toString().trim();
-        int supplierPhoneInt = Integer.parseInt(supplierPhone);
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(BookEntry.COLUMN_BOOK_NAME, productName);
-        contentValues.put(BookEntry.COLUMN_BOOK_PRICE, priceDoubleRounded);
-        contentValues.put(BookEntry.COLUMN_BOOK_QUANTITY, quantityInt);
-        contentValues.put(BookEntry.COLUMN_BOOK_COVER, bookCoverInt);
-        contentValues.put(BookEntry.COLUMN_BOOK_SUPPLIER, supplierName);
-        contentValues.put(BookEntry.COLUMN_BOOK_PHONE, supplierPhoneInt);
 
-        long newRowId = database.insert(BookEntry.TABLE_NAME, null, contentValues);
-        if (newRowId == -1) {
+        if (productName.isEmpty() || price.isEmpty() || quantity.isEmpty() || supplierName.isEmpty()
+                || supplierPhone.isEmpty()) {
 
-            Toast.makeText(this, "Error saving book", Toast.LENGTH_SHORT).show();
+            if (!productName.isEmpty()) {
 
+                productEditText.setTextKeepState(productName);
+
+                if (!price.isEmpty()) {
+
+                    priceEditText.setTextKeepState(price);
+
+                    if (!quantity.isEmpty()) {
+
+                        quantityEditText.setTextKeepState(quantity);
+
+                        if (!supplierName.isEmpty()) {
+
+                            supplierNameEditText.setTextKeepState(supplierName);
+
+                            if (!supplierPhone.isEmpty()) {
+
+                                supplierPhoneEditText.setTextKeepState(supplierPhone);
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+            onBackPressed();
         } else {
 
-            Toast.makeText(this, "Book saved in row " + newRowId, Toast.LENGTH_SHORT).show();
+            priceDouble = Double.parseDouble(price);
+            DecimalFormat decimalFormat = new DecimalFormat("####0.00");
+            price = decimalFormat.format(priceDouble).toString();
+            priceDoubleRounded = Double.parseDouble(price);
+            quantityInt = Integer.parseInt(quantity);
+            supplierPhoneInt = Integer.parseInt(supplierPhone);
+
+            contentValues.put(BookEntry.COLUMN_BOOK_NAME, productName);
+            contentValues.put(BookEntry.COLUMN_BOOK_PRICE, priceDoubleRounded);
+            contentValues.put(BookEntry.COLUMN_BOOK_QUANTITY, quantityInt);
+            contentValues.put(BookEntry.COLUMN_BOOK_COVER, bookCoverInt);
+            contentValues.put(BookEntry.COLUMN_BOOK_SUPPLIER, supplierName);
+            contentValues.put(BookEntry.COLUMN_BOOK_PHONE, supplierPhoneInt);
+            finish();
+        }
+
+        newRowId = database.insert(BookEntry.TABLE_NAME, null, contentValues);
+        if (newRowId == -1) {
+
+            Toast.makeText(this, getResources().getString(R.string.error_saving_book), Toast.LENGTH_SHORT).show();
+        } else {
+
+            Toast.makeText(this, getResources().getString(R.string.book_saved_in_row) + " " + newRowId, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -141,7 +184,6 @@ public class EditorBookActivity extends AppCompatActivity {
             case R.id.save:
 
                 insertBook();
-                finish();
                 return true;
 
             case R.id.delete:
@@ -158,4 +200,29 @@ public class EditorBookActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setMessage(getResources().getString(R.string.alert_book));
+        builder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.cancel();
+            }
+        });
+        builder.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.cancel();
+                finish();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
 }
