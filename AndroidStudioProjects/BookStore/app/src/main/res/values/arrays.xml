@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cover_spinner">
+
+        <item>@string/hard_cover</item>
+        <item>@string/paper_back</item>
+    </string-array>
+
+
+    <string-array name="genre_spinner">
+
+        <item>@string/jazz</item>
+        <item>@string/pop</item>
+        <item>@string/dance</item>
+        <item>@string/rock</item>
+        <item>@string/classical</item>
+        <item>@string/opera</item>
+        <item>@string/audiobook</item>
+    </string-array>
+
+</resources>

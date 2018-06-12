@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StoreActivity">
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/book_headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/book_list_headline"
+            android:gravity="center"
+            android:padding="@dimen/eight_dp"
+            android:text="@string/book_list"
+            android:textAllCaps="true"
+            android:textSize="@dimen/sixteen_sp_text"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000">
+
+        </View>
+
+        <ListView
+            android:id="@+id/book_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/book_background"
+            android:divider="@color/book_divider"
+            android:dividerHeight="1dp"
+            android:minHeight="300dp">
+
+        </ListView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000">
+
+        </View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cd_list_headline"
+            android:gravity="center"
+            android:padding="@dimen/eight_dp"
+            android:text="@string/cd_list"
+            android:textAllCaps="true"
+            android:textSize="@dimen/sixteen_sp_text"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000">
+
+        </View>
+
+        <ListView
+            android:id="@+id/cd_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/cd_background"
+            android:divider="@color/cd_divider"
+            android:dividerHeight="1dp"
+            android:minHeight="300dp">
+
+        </ListView>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_cd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/sixteen_dp"
+        android:src="@drawable/music"
+        app:backgroundTint="@color/cd_list_headline" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerInParent="true">
+
+    </View>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/view"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/sixteen_dp"
+        android:src="@drawable/book"
+        app:backgroundTint="@color/book_list_headline" />
+
+    <RelativeLayout
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/empty_view_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="EMPTY LIST" />
+
+
+            <TextView
+                android:id="@+id/empty_view_cd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="EMPTY LIST" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
