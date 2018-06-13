@@ -1,0 +1,47 @@
+<application>
+  <component name="DimensionService">
+    <location key="WELCOME_SCREEN.0.0.1920.1080" x="962" y="437" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080" x="667" y="330" />
+    <location key="FileChooserDialogImpl.0.0.1920.1080" x="740" y="269" />
+    <location key="AndroidCreateResourceFileDialog.0.0.1920.1080" x="202" y="445" />
+    <location key="deploy.picker.dialog.0.0.1920.1080" x="731" y="171" />
+    <location key="SettingsEditor.0.0.1920.1080" x="813" y="160" />
+    <location key="Github.ShareDialog.0.0.1920.1080" x="1124" y="380" />
+    <location key="Github.UntrackedFilesDialog.0.0.1920.1080" x="1103" y="217" />
+    <location key="CommitChangelistDialog2.0.0.1920.1080" x="1002" y="120" />
+    <location key="#Notifications.0.0.1920.1080" x="1081" y="231" />
+    <location key="#Browse_Repositories.0.0.1920.1080" x="912" y="159" />
+    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.1920.1080" x="738" y="396" />
+    <location key="git4idea.merge.GitMergeDialog.0.0.1920.1080" x="893" y="309" />
+    <location key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog.0.0.1920.1080" x="690" y="269" />
+    <location key="git4idea.ui.GitStashDialog.0.0.1920.1080" x="1129" y="408" />
+    <location key="Vcs.Push.Dialog.0.0.1920.1080" x="1151" y="268" />
+    <location key="ScreenshotViewer.Dimensions.0.0.1920.1080" x="396" y="0" />
+    <location key="#com.intellij.ide.util.MemberChooser.0.0.1920.1080" x="765" y="222" />
+    <location key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes.0.0.1920.1080" x="745" y="366" />
+    <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.1920.1080" x="690" y="261" />
+    <location key="IdeErrosDialog.0.0.1920.1080" x="560" y="0" />
+    <location key="AndroidCreateResourceDirectoryDialog.0.0.1920.1080" x="277" y="179" />
+    <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.1920.1080" x="684" y="310" />
+    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.0.0.1920.1080" x="617" y="0" />
+    <location key="#app.0.0.1920.1080" x="718" y="137" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1080" x="414" y="169" />
+    <location key="#Project_Structure.0.0.1920.1080" x="542" y="165" />
+    <location key="#com.intellij.refactoring.memberPushDown.PushDownDialog.0.0.1920.1080" x="223" y="307" />
+    <location key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog.0.0.1920.1080" x="204" y="268" />
+    <location key="ProcessPopupWindow.0.0.1920.1080" x="699" y="927" />
+    <location key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog.0.0.1920.1080" x="1125" y="265" />
+    <location key="git4idea.merge.GitPullDialog.0.0.1920.1080" x="1160" y="311" />
+    <location key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.1920.1080" x="1271" y="361" />
+    <location key="git4idea.rebase.GitRebaseDialog.0.0.1920.1080" x="1236" y="383" />
+    <size key="javadoc.popup.0.0.1920.1080" width="446" height="154" />
+    <size key="GridCell.Tab.0.left.0.0.1920.1080" width="0" height="0" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1080" width="0" height="0" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1080" width="0" height="0" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="0" height="0" />
+    <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1080" width="1092" height="712" />
+    <size key="com.intellij.ide.util.TipDialog.0.0.1920.1080" width="585" height="378" />
+    <size key="ProcessPopupWindow.0.0.1920.1080" width="233" height="114" />
+    <size key="CommitChangelistDialog2.0.0.1920.1080" width="755" height="802" />
+  </component>
+</application>
