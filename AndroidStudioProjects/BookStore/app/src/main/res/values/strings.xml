@@ -70,4 +70,17 @@
     <string name="book_list">book list</string>
     <string name="cd_list">cd list</string>
 
+    <string name="click_on_the">Click on the</string>
+    <string name="orange_button">\norange button</string>
+    <string name="green_button">\ngreen button</string>
+    <string name="insert_books">\nto insert books!</string>
+    <string name="insert_cds">\nto insert CDs!</string>
+
+    <string name="price_text">Price:&#032;</string>
+    <string name="quantity_text">Quantity:&#032;</string>
+    <string name="genre_text">Genre:&#032;</string>
+    <string name="cover_type">Cover type:&#032;</string>
+    <string name="toast_for_missing_info">At least name, price and quantity used be filled</string>
+    <string name="toast_for_missing_phone_number">No phone number found</string>
+
 </resources>

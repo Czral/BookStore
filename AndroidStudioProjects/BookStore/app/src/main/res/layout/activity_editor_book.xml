@@ -145,6 +145,18 @@
 
     </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/order_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/sixteen_dp"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:layout_marginEnd="@dimen/thirty_two_dp"
+        android:layout_marginStart="@dimen/thirty_two_dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/round_button"
+        android:src="@drawable/call" />
+
     <!-- Icon made by Freepik from www.flaticon.com -->
     <ImageView
         android:layout_width="match_parent"

@@ -3,6 +3,7 @@
     <option name="recentPaths">
       <list>
         <option value="C:\Users\XXX\AndroidStudioProjects\BookStore" />
+        <option value="C:\Users\XXX\Desktop\BookStore" />
         <option value="C:\Users\XXX\Desktop\Inventory-master" />
         <option value="C:\Users\XXX\Desktop\app" />
         <option value="C:\Users\XXX\AndroidStudioProjects\ud845-Pets-starting-point" />
@@ -88,8 +89,8 @@
               <option name="build" value="AI-171.4443003" />
               <option name="productionCode" value="AI" />
               <option name="binFolder" value="C:\Program Files\Android\Android Studio\bin" />
-              <option name="projectOpenTimestamp" value="1528873296126" />
-              <option name="buildTimestamp" value="1510251671952" />
+              <option name="projectOpenTimestamp" value="1529044186261" />
+              <option name="buildTimestamp" value="1510251684270" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
@@ -354,6 +355,17 @@
               <option name="binFolder" value="C:\Program Files\Android\Android Studio\bin" />
               <option name="projectOpenTimestamp" value="1528476860887" />
               <option name="buildTimestamp" value="1510251688049" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="C:\Users\XXX\Desktop\BookStore">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="AI-171.4443003" />
+              <option name="productionCode" value="AI" />
+              <option name="binFolder" value="C:\Program Files\Android\Android Studio\bin" />
+              <option name="projectOpenTimestamp" value="1528876597516" />
+              <option name="buildTimestamp" value="1510251671952" />
             </RecentProjectMetaInfo>
           </value>
         </entry>

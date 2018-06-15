@@ -194,7 +194,7 @@ public class EditorCdActivity extends AppCompatActivity implements LoaderManager
                 }
             }
 
-            missingFields();
+            Toast.makeText(this, getResources().getString(R.string.toast_for_missing_info), Toast.LENGTH_SHORT).show();
         } else {
 
             cd_price_double = Double.parseDouble(price);

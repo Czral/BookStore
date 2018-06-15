@@ -6,8 +6,8 @@
     <property name="installed.kotlin.plugin.version" value="1.1.51-release-Studio3.0-1" />
     <property name="android-component-compatibility-check" value="1528443513380" />
     <property name="Default.savedEditorTheme" value="_@user_Default" />
-    <property name="lastTip" value="158" />
-    <property name="file.gist.reindex.count" value="3936" />
+    <property name="lastTip" value="161" />
+    <property name="file.gist.reindex.count" value="4188" />
     <property name="newly.installed.api.level" value="24" />
     <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Preview.PALETTE.LEFT" value="true" />
     <property name="ATTACHED_TOOL_WINDOW.Preview.PALETTE.LEFT" value="true" />
@@ -33,10 +33,10 @@
     <property name="palette.category.width" value="100" />
     <property name="ATTACHED_TOOL_WINDOW.Preview.LEFT.UNSCALED.WIDTH" value="225" />
     <property name="ATTACHED_TOOL_WINDOW.Preview.RIGHT.UNSCALED.WIDTH" value="225" />
-    <property name="file.chooser.recent.files" value="$USER_HOME$/Desktop/app&#10;C:/Users/XXX/Desktop/Inventory-master&#10;C:/Users/XXX/Desktop&#10;C:/Users/XXX/AndroidStudioProjects/ud845-Pets-starting-point&#10;C:/Users/XXX/AndroidStudioProjects/Miwok From Git&#10;C:/Users/XXX/AndroidStudioProjects/BookStore&#10;C:/&#10;C:/Users/XXX/Desktop/ud845-Pets-starting-point-master&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/drawable-hdpi/minus_one.png&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/drawable-hdpi/plus_one.png&#10;C:/Users/XXX/AndroidStudioProjects/Theol&#10;C:/Users/XXX/AndroidStudioProjects/001&#10;C:/Users/XXX/AndroidStudioProjects/Pokemon-master&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/drawable-xxxhdpi/books_stack.png&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/drawable-xxxhdpi/musical_note.png&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/drawable-xxxhdpi/notes.jpg&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/drawable-xhdpi/music.png&#10;C:/Users/XXX/AndroidStudioProjects/NewsApp&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/mipmap-mdpi/book.png&#10;D:/ud845-Pets-starting-point&#10;D:/Court-Counter-master&#10;D:/Down_Loads/NewsApp-master/NewsApp-master&#10;C:/Users/XXX/AndroidStudioProjects/ud843-QuakeReport-starting-point&#10;C:/Users/XXX/AndroidStudioProjects/News_App&#10;D:/ud839_Miwok-Starter-code&#10;D:/NewsApp&#10;D:/ud843-QuakeReport-starting-point&#10;D:/ud843_DidYouFeelIt-starting-point&#10;D:/Pokemon-master&#10;D:/ud843_Soonami-starting-point" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/AndroidStudioProjects/BookStore/app/src/main/res/drawable-hdpi/call.png&#10;C:/Users/XXX/Desktop/BookStore&#10;C:/Users/XXX/Desktop/app&#10;C:/Users/XXX/Desktop/Inventory-master&#10;C:/Users/XXX/Desktop&#10;C:/Users/XXX/AndroidStudioProjects/ud845-Pets-starting-point&#10;C:/Users/XXX/AndroidStudioProjects/Miwok From Git&#10;C:/Users/XXX/AndroidStudioProjects/BookStore&#10;C:/&#10;C:/Users/XXX/Desktop/ud845-Pets-starting-point-master&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/drawable-hdpi/minus_one.png&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/drawable-hdpi/plus_one.png&#10;C:/Users/XXX/AndroidStudioProjects/Theol&#10;C:/Users/XXX/AndroidStudioProjects/001&#10;C:/Users/XXX/AndroidStudioProjects/Pokemon-master&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/drawable-xxxhdpi/books_stack.png&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/drawable-xxxhdpi/musical_note.png&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/drawable-xxxhdpi/notes.jpg&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/drawable-xhdpi/music.png&#10;C:/Users/XXX/AndroidStudioProjects/NewsApp&#10;C:/Users/XXX/AndroidStudioProjects/BookStore/app/src/main/res/mipmap-mdpi/book.png&#10;D:/ud845-Pets-starting-point&#10;D:/Court-Counter-master&#10;D:/Down_Loads/NewsApp-master/NewsApp-master&#10;C:/Users/XXX/AndroidStudioProjects/ud843-QuakeReport-starting-point&#10;C:/Users/XXX/AndroidStudioProjects/News_App&#10;D:/ud839_Miwok-Starter-code&#10;D:/NewsApp&#10;D:/ud843-QuakeReport-starting-point&#10;D:/ud843_DidYouFeelIt-starting-point" />
     <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.LEFT.UNSCALED.WIDTH" value="225" />
     <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.RIGHT.UNSCALED.WIDTH" value="225" />
-    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.94658756" />
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.60534126" />
     <property name="PLUGIN_FILTER" value="android dra&#10;intellij&#10;waka" />
     <property name="MobileminApi" value="17" />
     <property name="SAVED_COMPANY_DOMAIN" value="android.example.com" />
@@ -52,7 +52,7 @@
     <property name="android.show.prompt.kill.session" value="true" />
     <property name="ExpandBeforeRunStepsPanel" value="true" />
     <property name="LOG_FILTER_HISTORY" value="name is&#10;VRW" />
-    <property name="studio.activity.count" value="0" />
+    <property name="studio.activity.count" value="155" />
     <property name="AndroidEnableDdms" value="true" />
   </component>
 </application>

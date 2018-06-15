@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/eight_dp"
-                android:text="Price:"
+                android:text="@string/price_text"
                 android:textColor="@color/price_color"
                 android:textSize="@dimen/twelve_sp_text" />
 
@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/eight_dp"
-                android:text="Quantity:"
+                android:text="@string/quantity_text"
                 android:textColor="@color/quantity_color"
                 android:textSize="@dimen/twelve_sp_text" />
 
@@ -90,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/eight_dp"
-                android:text="Cover type:"
+                android:text="@string/genre_text"
                 android:textColor="@color/cover_color"
                 android:textSize="@dimen/twelve_sp_text" />
 

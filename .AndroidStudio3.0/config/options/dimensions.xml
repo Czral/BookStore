@@ -35,10 +35,10 @@
     <location key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.1920.1080" x="1271" y="361" />
     <location key="git4idea.rebase.GitRebaseDialog.0.0.1920.1080" x="1236" y="383" />
     <size key="javadoc.popup.0.0.1920.1080" width="446" height="154" />
-    <size key="GridCell.Tab.0.left.0.0.1920.1080" width="0" height="0" />
-    <size key="GridCell.Tab.0.center.0.0.1920.1080" width="0" height="0" />
-    <size key="GridCell.Tab.0.right.0.0.1920.1080" width="0" height="0" />
-    <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="0" height="0" />
+    <size key="GridCell.Tab.0.left.0.0.1920.1080" width="1004" height="267" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1080" width="1004" height="267" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1080" width="1004" height="267" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="1004" height="267" />
     <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1080" width="1092" height="712" />
     <size key="com.intellij.ide.util.TipDialog.0.0.1920.1080" width="585" height="378" />
     <size key="ProcessPopupWindow.0.0.1920.1080" width="233" height="114" />

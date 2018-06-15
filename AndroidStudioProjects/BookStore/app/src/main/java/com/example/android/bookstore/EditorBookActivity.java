@@ -57,9 +57,13 @@ public class EditorBookActivity extends AppCompatActivity implements LoaderManag
     @BindView(R.id.decrease_quantity)
     ImageButton decreaseButton;
 
+    @BindView(R.id.order_button)
+    ImageButton orderButton;
+
     public int bookCoverInt = 0;
 
     int currentQuantity;
+    long currentSupplierPhone;
 
     private Uri currentBookUri;
 
@@ -105,7 +109,6 @@ public class EditorBookActivity extends AppCompatActivity implements LoaderManag
         supplierPhoneEditText.setOnTouchListener(touchListener);
 
         setupSpinner();
-
     }
 
     // Setups spinner.
@@ -149,7 +152,7 @@ public class EditorBookActivity extends AppCompatActivity implements LoaderManag
         double priceDoubleRounded;
         int quantityInt;
         int supplierPhoneBlank = 0;
-        int supplierPhoneInt;
+        long supplierPhoneLong;
 
         String productName = productEditText.getText().toString().trim();
         String price = priceEditText.getText().toString().trim();
@@ -192,7 +195,7 @@ public class EditorBookActivity extends AppCompatActivity implements LoaderManag
 
             }
 
-            missingFields();
+            Toast.makeText(this, getResources().getString(R.string.toast_for_missing_info), Toast.LENGTH_SHORT).show();
 
         } else {
 
@@ -220,8 +223,8 @@ public class EditorBookActivity extends AppCompatActivity implements LoaderManag
 
             if (!TextUtils.isEmpty(supplierPhone)) {
 
-                supplierPhoneInt = Integer.parseInt(supplierPhone);
-                contentValues.put(BookEntry.COLUMN_BOOK_PHONE, supplierPhoneInt);
+                supplierPhoneLong = Long.parseLong(supplierPhone);
+                contentValues.put(BookEntry.COLUMN_BOOK_PHONE, supplierPhoneLong);
             } else {
 
                 contentValues.put(BookEntry.COLUMN_BOOK_PHONE, supplierPhoneBlank);
@@ -364,7 +367,7 @@ public class EditorBookActivity extends AppCompatActivity implements LoaderManag
             currentQuantity = cursor.getInt(quantityColumnIndex);
             int currentCover = cursor.getInt(coverColumnIndex);
             String currentSupplierName = cursor.getString(supplierNameColumnIndex);
-            int currentSupplierPhone = cursor.getInt(supplierPhoneColumnIndex);
+            currentSupplierPhone = cursor.getLong(supplierPhoneColumnIndex);
 
             productEditText.setText(currentName);
             priceEditText.setText(String.valueOf(currentPrice));
@@ -405,6 +408,24 @@ public class EditorBookActivity extends AppCompatActivity implements LoaderManag
                         currentQuantity -= 1;
                         quantityEditText.setText(String.valueOf(currentQuantity));
                     }
+                }
+            });
+
+            orderButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if (currentSupplierPhone != 0) {
+                        Intent orderIntent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", String.valueOf(currentSupplierPhone), null));
+                        if (orderIntent.resolveActivity(getPackageManager()) != null) {
+
+                            startActivity(orderIntent);
+                        }
+                    } else {
+
+                        missingPhoneNumber();
+                    }
+
                 }
             });
 
@@ -502,29 +523,21 @@ public class EditorBookActivity extends AppCompatActivity implements LoaderManag
         alertDialog.show();
     }
 
-    // This method is called when book info are missing.
-    private void missingFields() {
+    private void missingPhoneNumber() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(false);
-        builder.setMessage(getResources().getString(R.string.alert_book));
-        builder.setPositiveButton(getResources().getString(android.R.string.yes), new DialogInterface.OnClickListener() {
+        builder.setMessage(getResources().getString(R.string.toast_for_missing_phone_number));
+        builder.setPositiveButton(getResources().getString(android.R.string.ok), new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(DialogInterface dialogInterface, int i) {
 
-                dialog.cancel();
+                dialogInterface.dismiss();
             }
         });
-        builder.setNegativeButton(getResources().getString(android.R.string.no), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
 
-                dialog.cancel();
-                finish();
-            }
-        });
-        AlertDialog alert = builder.create();
-        alert.show();
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
     }
 
 }

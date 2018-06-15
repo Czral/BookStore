@@ -10,6 +10,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Spannable;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -51,7 +54,7 @@ public class StoreActivity extends AppCompatActivity implements LoaderManager.Lo
     TextView emptyViewBook;
 
     @BindView(R.id.empty_view_cd)
-    View emptyViewCd;
+    TextView emptyViewCd;
 
     BookCursorAdapter bookCursorAdapter;
     CdCursorAdapter cdCursorAdapter;
@@ -102,11 +105,6 @@ public class StoreActivity extends AppCompatActivity implements LoaderManager.Lo
 
         cdList.setAdapter(cdCursorAdapter);
 
-        TextView emptyText = findViewById(android.R.id.empty);
-        cdList.setEmptyView(emptyViewCd);
-        bookList.setActivated(true);
-        bookList.setEmptyView(emptyViewBook);
-
         cdList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -120,6 +118,10 @@ public class StoreActivity extends AppCompatActivity implements LoaderManager.Lo
 
         getLoaderManager().initLoader(BOOK_LOADER, null, this);
         getLoaderManager().initLoader(CD_LOADER, null, this);
+
+        setsEmptyBookColor();
+        setsEmptyCdColor();
+
     }
 
     @Override
@@ -212,6 +214,22 @@ public class StoreActivity extends AppCompatActivity implements LoaderManager.Lo
             bookCursorAdapter.swapCursor(cursor);
         }
 
+        if ((bookCursorAdapter.isEmpty()) || (bookCursorAdapter == null)) {
+
+            emptyViewBook.setVisibility(View.VISIBLE);
+        } else {
+
+            emptyViewBook.setVisibility(View.INVISIBLE);
+        }
+
+        if (cdCursorAdapter.isEmpty() || cdCursorAdapter == null) {
+
+            emptyViewCd.setVisibility(View.VISIBLE);
+        } else {
+
+            emptyViewCd.setVisibility(View.INVISIBLE);
+        }
+
     }
 
     @Override
@@ -230,14 +248,17 @@ public class StoreActivity extends AppCompatActivity implements LoaderManager.Lo
         if (bookCursorAdapter.getCount() == 0) {
 
             Toast.makeText(this, getResources().getString(R.string.nothing_to_delete), Toast.LENGTH_SHORT).show();
+            //     emptyViewBook.setVisibility(View.VISIBLE);
         } else {
 
             if (bookRowsDeleted != 0) {
 
                 Toast.makeText(this, getResources().getString(R.string.book_list_deleted), Toast.LENGTH_SHORT).show();
+                //       emptyViewBook.setVisibility(View.VISIBLE);
             } else {
 
                 Toast.makeText(this, getResources().getString(R.string.deletion_failed), Toast.LENGTH_SHORT).show();
+                //          emptyViewBook.setVisibility(View.INVISIBLE);
             }
         }
 
@@ -286,6 +307,33 @@ public class StoreActivity extends AppCompatActivity implements LoaderManager.Lo
         }
 
     }
+
+    private void setsEmptyBookColor() {
+
+        String emptyFirst = getResources().getString(R.string.click_on_the);
+        String emptyColor = getResources().getString(R.string.orange_button);
+        String emptyEnd = getResources().getString(R.string.insert_books);
+        emptyViewBook.setText(emptyFirst + emptyColor + emptyEnd, TextView.BufferType.SPANNABLE);
+        Spannable spannable = (Spannable) emptyViewBook.getText();
+        int start = emptyFirst.length();
+        int end = start + emptyColor.length();
+        spannable.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.headlines_orange)), start,
+                end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+    }
+
+    private void setsEmptyCdColor() {
+
+        String emptyFirst = getResources().getString(R.string.click_on_the);
+        String emptyColor = getResources().getString(R.string.green_button);
+        String emptyEnd = getResources().getString(R.string.insert_cds);
+        emptyViewCd.setText(emptyFirst + emptyColor + emptyEnd, TextView.BufferType.SPANNABLE);
+        Spannable spannable = (Spannable) emptyViewCd.getText();
+        int start = emptyFirst.length();
+        int end = start + emptyColor.length();
+        spannable.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.cd_list_headline)), start,
+                end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+    }
+
 }
 
 
