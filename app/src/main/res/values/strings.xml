@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">Book Store</string>
+
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+
+    <string name="delete_all_books">Delete all books</string>
+    <string name="delete_all_cds">Delete all CDs</string>
+    <string name="delete_everything">Delete everything</string>
+
+
+    <string name="no_cover_type_selected">No cover type</string>
+    <string name="hard_cover">Hard cover</string>
+    <string name="paper_back">Paper back</string>
+
+
+    <string name="no_genre_selected">No genre</string>
+    <string name="fiction">Fiction</string>
+    <string name="novel">Novel</string>
+    <string name="mystery">Mystery</string>
+    <string name="comic">Comic</string>
+    <string name="drama">Drama</string>
+    <string name="poetry">Poetry</string>
+    <string name="romance">Romance</string>
+    <string name="biography">Biography</string>
+
+    <string name="jazz">Jazz</string>
+    <string name="pop">Pop</string>
+    <string name="dance">Dance</string>
+    <string name="rock">Rock</string>
+    <string name="classical">Classical</string>
+    <string name="opera">Opera</string>
+    <string name="audiobook">Audiobook</string>
+
+    <string name="cd_info">CD Info</string>
+    <string name="book_info">Book Info</string>
+    <string name="supplier_info">Supplier Info</string>
+    <string name="name">Name</string>
+    <string name="title">Title</string>
+    <string name="price">Price</string>
+    <string name="quantity">Quantity</string>
+    <string name="artist">Artist</string>
+    <string name="select_genre">Select genre</string>
+    <string name="select_cover_type">Select cover type</string>
+    <string name="phone_number">Phone number</string>
+
+    <string name="music_note">Music Note</string>
+    <string name="book_stack">Book Stack</string>
+
+    <string name="error_saving_book">Error saving book.</string>
+    <string name="book_saved_successfully">Book saved successfully</string>
+    <string name="alert_book">Some fields are missing. Please re-enter book info.</string>
+    <string name="error_saving_cd">Error saving CD.</string>
+    <string name="cd_saved_successfully">CD saved successfully</string>
+    <string name="alert_cd">Some fields are missing. Please re-enter CD info.</string>
+    <string name="error_updating_book">Error updating book</string>
+    <string name="error_updating_cd">Error updating CD</string>
+    <string name="book_updated">Book updated</string>
+    <string name="cd_updated">CD updated</string>
+    <string name="nothing_to_delete">Nothing to delete</string>
+
+    <string name="book_list_deleted">Book list deleted.</string>
+    <string name="cd_list_deleted">CD list deleted.</string>
+    <string name="deletion_failed">Deletion failed.</string>
+    <string name="deletion_successful">Deletion successful</string>
+    <string name="lists_deleted">Lists deleted.</string>
+
+    <string name="quantity_cannot_decrease">Quantity can\'t be decreased.</string>
+    <string name="item_sold">Item sold.</string>
+    <string name="undo">Undo</string>
+    <string name="sale">sale</string>
+
+    <string name="add_a_book">Add a book</string>
+    <string name="edit_a_book">Edit a book</string>
+    <string name="add_a_cd">Add a CD</string>
+    <string name="edit_a_cd">Edit a CD</string>
+    <string name="no_supplier_name">No supplier name</string>
+    <string name="unknown_artist">Unknown artist</string>
+    <string name="check_dialog">Are you sure you want to discard the changes?</string>
+    <string name="check_delete">Are you sure you want to delete this item?</string>
+
+    <string name="clear_all">Clear all</string>
+    <string name="book_list">book list</string>
+    <string name="cd_list">cd list</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="price_euro">%s €</string>
+    <string name="add_item">Add item</string>
+
+
+</resources>

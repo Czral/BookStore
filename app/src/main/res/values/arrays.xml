@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="book_cover_spinner">
+
+        <item>@string/no_cover_type_selected</item>
+        <item>@string/hard_cover</item>
+        <item>@string/paper_back</item>
+    </string-array>
+
+    <string-array name="book_genre_spinner">
+
+        <item>@string/no_genre_selected</item>
+        <item>@string/fiction</item>
+        <item>@string/novel</item>
+        <item>@string/mystery</item>
+        <item>@string/comic</item>
+        <item>@string/drama</item>
+        <item>@string/poetry</item>
+        <item>@string/romance</item>
+        <item>@string/biography</item>
+    </string-array>
+
+
+    <string-array name="cd_genre_spinner">
+
+        <item>@string/no_genre_selected</item>
+        <item>@string/jazz</item>
+        <item>@string/pop</item>
+        <item>@string/dance</item>
+        <item>@string/rock</item>
+        <item>@string/classical</item>
+        <item>@string/opera</item>
+        <item>@string/audiobook</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/delete_books"
+        android:icon="@drawable/delete"
+        app:showAsAction="always"
+        android:title="@string/delete_all_books" />
+
+    <item
+        android:id="@+id/delete_cds"
+        android:icon="@drawable/delete_forever"
+        app:showAsAction="always"
+        android:title="@string/delete_all_cds" />
+
+    <item
+        android:id="@+id/clear_all"
+        android:icon="@drawable/clear"
+        app:showAsAction="always"
+        android:title="@string/clear_all" />
+
+</menu>
