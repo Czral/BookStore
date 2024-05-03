@@ -21,7 +21,7 @@ import com.squareup.picasso.Picasso;
 
 public class CdFragment extends Fragment {
 
-    FragmentBookCdBinding binding;
+    private FragmentBookCdBinding binding;
 
     public CdFragment() {
         // Required empty public constructor
@@ -34,20 +34,20 @@ public class CdFragment extends Fragment {
         binding = FragmentBookCdBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
-        binding.bookCdRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
+        binding.bookCdRecyclerView.setLayoutManager(new LinearLayoutManager(requireActivity().getBaseContext()));
 
         Picasso.get().load(R.drawable.add).into(binding.bookCdFab);
         binding.bookCdFab.setOnClickListener(v -> {
 
             Intent intent = new Intent(getContext(), EditorCdActivity.class);
-            getContext().startActivity(intent);
+            requireContext().startActivity(intent);
         });
 
-        StoreViewModel storeViewModel = new ViewModelProvider(getActivity()).get(StoreViewModel.class);
+        StoreViewModel storeViewModel = new ViewModelProvider(requireActivity()).get(StoreViewModel.class);
 
-        storeViewModel.getAllCds().observe((LifecycleOwner) getContext(), cds -> {
+        storeViewModel.getAllCds().observe((LifecycleOwner) requireContext(), cds -> {
 
-            if (cds != null && cds.size() > 0) {
+            if (cds != null && !cds.isEmpty()) {
 
                 CdRecyclerAdapter cdAdapter = new CdRecyclerAdapter(cds);
                 binding.bookCdRecyclerView.setAdapter(cdAdapter);

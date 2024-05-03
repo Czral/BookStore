@@ -1,5 +1,7 @@
 package com.example.android.bookstore.view;
 
+import static com.example.android.bookstore.data.Constants.CD_INTENT;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,8 +24,6 @@ import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
 import java.util.Collections;
-
-import static com.example.android.bookstore.data.Constants.CD_INTENT;
 
 public class EditorCdActivity extends AppCompatActivity {
 
@@ -169,10 +169,10 @@ public class EditorCdActivity extends AppCompatActivity {
 
     private boolean checkIfEditTextsAreEmpty() {
 
-        return binding.nameEditText.getText().toString().trim().length() > 0
-                && binding.authorArtistEditText.getText().toString().trim().length() > 0
-                && binding.priceEditText.getText().toString().trim().length() > 0
-                && binding.quantityEditText.getText().toString().trim().length() > 0;
+        return binding.nameEditText.getText().toString().trim().isEmpty()
+                && binding.authorArtistEditText.getText().toString().trim().isEmpty()
+                && binding.priceEditText.getText().toString().trim().isEmpty()
+                && binding.quantityEditText.getText().toString().trim().isEmpty();
     }
 
     @Override

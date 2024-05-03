@@ -20,7 +20,7 @@ import com.squareup.picasso.Picasso;
 
 public class BookFragment extends Fragment {
 
-    FragmentBookCdBinding binding;
+    private FragmentBookCdBinding binding;
 
     public BookFragment() {
         // Required empty public constructor
@@ -33,20 +33,20 @@ public class BookFragment extends Fragment {
         binding = FragmentBookCdBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
-        binding.bookCdRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
+        binding.bookCdRecyclerView.setLayoutManager(new LinearLayoutManager(requireActivity().getBaseContext()));
 
         Picasso.get().load(R.drawable.add).into(binding.bookCdFab);
         binding.bookCdFab.setOnClickListener(v -> {
 
             Intent intent = new Intent(getContext(), EditorBookActivity.class);
-            getContext().startActivity(intent);
+            requireContext().startActivity(intent);
         });
 
-        StoreViewModel storeViewModel = new ViewModelProvider(getActivity()).get(StoreViewModel.class);
+        StoreViewModel storeViewModel = new ViewModelProvider(requireActivity()).get(StoreViewModel.class);
 
-        storeViewModel.getAllBooks().observe((LifecycleOwner) getContext(), books -> {
+        storeViewModel.getAllBooks().observe((LifecycleOwner) requireContext(), books -> {
 
-            if (books != null && books.size() > 0) {
+            if (books != null && !books.isEmpty()) {
 
                 BookRecyclerAdapter bookCursorAdapter = new BookRecyclerAdapter(books);
                 binding.bookCdRecyclerView.setAdapter(bookCursorAdapter);

@@ -1,17 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    compileSdk 34
     defaultConfig {
         applicationId "com.example.android.bookstore"
-        minSdkVersion 17
-        targetSdkVersion 30
+        minSdkVersion 21
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        configurations.all {
-            resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
-        }
     }
     buildTypes {
         release {

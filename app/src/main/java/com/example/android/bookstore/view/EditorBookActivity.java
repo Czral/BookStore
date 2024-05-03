@@ -5,6 +5,7 @@ import static com.example.android.bookstore.data.Constants.BOOK_INTENT;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,7 +48,6 @@ public class EditorBookActivity extends AppCompatActivity {
         Picasso.get().load(R.drawable.books_stack).into(binding.imageView);
 
         setupSpinners();
-
 
         Intent bookIntent = getIntent();
         int id = bookIntent.getIntExtra(BOOK_INTENT, 0);
@@ -194,6 +194,8 @@ public class EditorBookActivity extends AppCompatActivity {
 
             if (!checkIfEditTextsAreEmpty()) {
 
+                Log.d("RomiRain1", "EMPTY");
+
                 binding.nameEditText.setTextKeepState(title);
                 binding.priceEditText.setTextKeepState(prices);
                 binding.quantityEditText.setTextKeepState(quantityText);
@@ -201,6 +203,9 @@ public class EditorBookActivity extends AppCompatActivity {
                 missingFields();
 
             } else {
+
+
+                Log.d("RomiRain1", "NU:LL EMPTY");
 
                 int quantity = Integer.parseInt(quantityText);
 
@@ -232,10 +237,10 @@ public class EditorBookActivity extends AppCompatActivity {
 
     private boolean checkIfEditTextsAreEmpty() {
 
-        return binding.nameEditText.getText().toString().trim().length() > 0
-                || binding.authorArtistEditText.getText().toString().trim().length() > 0
-                || binding.priceEditText.getText().toString().trim().length() > 0
-                || binding.quantityEditText.getText().toString().trim().length() > 0;
+        return binding.nameEditText.getText().toString().trim().isEmpty()
+                && binding.authorArtistEditText.getText().toString().trim().isEmpty()
+                && binding.priceEditText.getText().toString().trim().isEmpty()
+                && binding.quantityEditText.getText().toString().trim().isEmpty();
     }
 
     @Override

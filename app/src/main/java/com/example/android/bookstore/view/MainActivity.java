@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                if (bookIds.size() > 0) {
+                if (!bookIds.isEmpty()) {
 
                     builder.setPositiveButton("Yes", (dialog, which) -> {
 
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                if (cdIds.size() > 0) {
+                if (!cdIds.isEmpty()) {
 
                     builder.setPositiveButton("Yes", (dialog, which) -> {
 
